@@ -29,15 +29,15 @@ Given a sentence x, the object is to predict its label y.
 To solve this problem, the sentences are transformed into pretrained text representations and then the text representations are fed to various deep learning architectures to classify the sentences into classes. 
 The proposed solution is described as follows.
 
-1. Create a word dictionary which contains the mapping of each character in xtrain_obfuscated.txt to an integer.
+1. Create a character dictionary which contains the mapping of each character in xtrain_obfuscated.txt to an integer.
 
-2. Transfer each sentence into a sequence of integers by using the word dictionary created in the first step.
+2. Transfer each sentence into a sequence of integers by using the character dictionary created in the first step.
 
 3. All the sentences are padded with zeros to make all the sentences have the same length which is the maximum length of the sentences.
 
-4. Download the pre-trained word embedding vectors of fastText and create a dictionary which contains the mapping of a word (or a character) to a vector.
+4. Download the pre-trained word embedding vectors of fastText and create a dictionary which contains the mapping of a character to a vector.
 
-5. Based on the word dictionary created in step 1 and the word embedding dictionary created in step 4, create an embedding matrix. Each row i of the matrix contains the word vector of the character i.
+5. Based on the character dictionary created in step 1 and the character embedding dictionary created in step 4, create an embedding matrix. Each row i of the matrix contains the word vector of the character i.
 
 6. Define a deep learning model. The input layer takes the sequence of integers (generated in step 2) as input.
 
