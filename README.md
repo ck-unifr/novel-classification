@@ -72,7 +72,7 @@ I would expect the proposed approach achieves similar accuracy (around 78%) on t
 
 Please note, due to the limited time available and the limited computation resources 
 (the experiments were conducted on a Macbook pro 2015), 
-I only trained the model with 60 epochs.
+I only trained the model with 80 epochs.
 The learning curve shows that if I increase the number of epochs, the accuracy might be higher.
 
 
