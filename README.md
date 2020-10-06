@@ -37,7 +37,7 @@ The proposed solution is described as follows.
 
 4. Download the pre-trained word embedding vectors of fastText and create a dictionary which contains the mapping of a character to a vector.
 
-5. Based on the character dictionary created in step 1 and the character embedding dictionary created in step 4, create an embedding matrix. Each row i of the matrix contains the word vector of the character i.
+5. Create a matrix of one embedding for each character by enumerating all unique character in the character dictionary created in step 1 and locating the embedding weight vector from the loaded embedding from step 4.
 
 6. Define a deep learning model. The input layer takes the sequence of integers (generated in step 2) as input.
 
@@ -51,7 +51,7 @@ The proposed solution is described as follows.
 
 11. The trained model is used to predict the class of the sentences in xtest_obfuscated.txt. 
 
-12. The predictions are saved in ytest.txt.
+12. Save the predictions to ytest.txt.
 
 The details of the proposed solution are in the notebook, novel-classification.ipynb
 
@@ -66,7 +66,9 @@ b) Expected accuracy on the test set
 Experiments show that the proposed deep learning model (CNN+GRU) achieves around 78% accuracy on the validation set. 
 The validation set consists of 20% of the data randomly selected from xtrain_obfuscated.txt.
 The rest 80% of the data is used as a training set to train the deep learning model.
-Based on the experiments, I would expect the proposed approach achieves similar accuracy (around 78%) on the test set.
+
+Based on the assumption that the sentences of train and test sets belong to the same distribution and the results of the experiments, 
+I would expect the proposed approach achieves similar accuracy (around 78%) on the test set.
 
 Please note, due to the limited time available and the limited computation resources 
 (the experiments were conducted on a Macbook pro 2015), 
